@@ -2,7 +2,6 @@ function solution(board) {
   let answer = 0;
   let dx = [-1, 0, 1, 1, 1, 0, -1, -1];
   let dy = [-1, -1, -1, 0, 1, 1, 1, 0];
-  let checkArr = Array.from({ length: 8 }, () => 0);
 
   const DFS = (x, y) => {
     board[x][y] = 0;
