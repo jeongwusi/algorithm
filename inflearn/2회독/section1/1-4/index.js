@@ -1,5 +1,11 @@
-const solution = (arr) => {
-  return Math.min(...arr);
+const solution = (num) => {
+  let answer = 0;
+  for (let i = 1; i <= num; i++) {
+    answer += i;
+  }
+  return answer;
 };
 
-console.log(solution([5, 3, 7, 11, 2, 15, 17]));
+console.log(solution(6));
+
+console.log(solution(10));
