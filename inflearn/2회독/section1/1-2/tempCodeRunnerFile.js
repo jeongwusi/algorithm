@@ -1,1 +1,0 @@
-console.log(solution([6, 7, 11]));
