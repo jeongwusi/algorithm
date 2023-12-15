@@ -1,5 +1,4 @@
 const solution = (arr) => {
-  let newArr = [];
   let flag = 0;
   const sum = arr.reduce((a, c) => a + c);
   for (let i = 0; i < arr.length - 1; i++) {
