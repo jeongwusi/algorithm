@@ -6,15 +6,8 @@ const solution = (num, A, B) => {
       (A[i] === 1 && B[i] === 3)
     ) {
       console.log("A");
-    } else if (
-      (A[i] === 3 && B[i] === 1) ||
-      (A[i] === 1 && B[i] === 2) ||
-      (A[i] === 2 && B[i] === 3)
-    ) {
-      console.log("B");
-    } else {
-      console.log("D");
-    }
+    } else if (A[i] === B[i]) console.log("D");
+    else console.log("B");
   }
 };
 
