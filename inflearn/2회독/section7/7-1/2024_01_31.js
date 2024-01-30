@@ -1,10 +1,10 @@
 const solution = (arr) => {
-  let index;
-  for (let i = 0; i < arr.length; i++) {
-    index = i;
+  for (let i = 0; i < arr.length - 1; i++) {
+    let index = i;
     for (let j = i + 1; j < arr.length; j++) {
-      if (arr[index] > arr[j]) [arr[index], arr[j]] = [arr[j], arr[index]];
+      if (arr[index] > arr[j]) index = j;
     }
+    [arr[index], arr[i]] = [arr[i], arr[index]];
   }
   return arr;
 };
