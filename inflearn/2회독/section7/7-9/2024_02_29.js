@@ -1,0 +1,32 @@
+const solution = (arr) => {
+  let newArr = [];
+  let result = 0;
+
+  for (const el of arr) {
+    newArr.push([el[0], 1]);
+    newArr.push([el[1], 2]);
+  }
+
+  newArr.sort((a, b) => {
+    if (a[0] === b[0]) return b[1] - a[1];
+    else return a[0] - b[0];
+  });
+
+  let tmp = 0;
+  for (const el of newArr) {
+    if (el[1] === 1) tmp++;
+    else tmp--;
+    result = Math.max(tmp, result);
+  }
+  return result;
+};
+
+console.log(
+  solution([
+    [14, 18],
+    [12, 15],
+    [15, 20],
+    [20, 30],
+    [5, 14],
+  ])
+);
