@@ -1,3 +1,13 @@
-const solution = () => {};
+const solution = (n) => {
+  const DFS = (L) => {
+    if (L === 0) return;
+    else {
+      DFS(L - 1);
+      console.log(L);
+    }
+  };
 
-console.log(solution());
+  DFS(n);
+};
+
+solution(3);
