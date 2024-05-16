@@ -7,8 +7,8 @@ const solution = (n, wires) => {
   }
 
   const dfs = (node, visited) => {
-    visited[node] = true;
     let count = 1;
+    visited[node] = true;
 
     for (const neighbor of graph[node]) {
       if (!visited[neighbor]) count += dfs(neighbor, visited);
@@ -19,16 +19,14 @@ const solution = (n, wires) => {
   let minDifference = Infinity;
 
   for (const [v1, v2] of wires) {
-    const visited = Array(n + 1).fill(false);
+    const visited = Array(n + 1).fill(0);
     visited[v1] = true;
 
     const count1 = dfs(v2, visited);
     const count2 = n - count1;
 
-    tmp = Math.abs(count1 - count2);
-    minDifference = Math.min(tmp, minDifference);
+    minDifference = Math.min(minDifference, Math.abs(count1 - count2));
   }
-
   return minDifference;
 };
 
